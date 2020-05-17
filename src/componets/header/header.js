@@ -17,7 +17,9 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+
 import AddDevice from '../forms/addDevice';
+import DeviceList from '../list/deviceList'
 
 const drawerWidth = 240;
 
@@ -149,10 +151,12 @@ export default function MiniDrawer() {
             </ListItem>
           ))}
         </List>
+        <DeviceList/>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <AddDevice></AddDevice>
+        <AddDevice/>
+        <DeviceList/>
       </main>
     </div>
   );
