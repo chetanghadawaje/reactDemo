@@ -21,6 +21,7 @@ import MailIcon from '@material-ui/icons/Mail';
 import AddDevice from '../forms/addDevice';
 import DeviceList from '../list/deviceList'
 
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -151,12 +152,13 @@ export default function MiniDrawer() {
             </ListItem>
           ))}
         </List>
-        <DeviceList/>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <AddDevice/>
-        <DeviceList/>
+        <Router>
+          <Route path='/add_device' component={AddDevice} />
+          <Route path='/device_list' component={DeviceList} />
+        </Router>
       </main>
     </div>
   );
